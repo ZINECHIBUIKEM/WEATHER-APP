@@ -9,14 +9,18 @@ export function Header() {
     setOpen(!open);
   }
 
-  const navStyle = ({ isActive }) => 
-    isActive 
-    ? 
-    "text-yellow-400 font-thin" 
-    :
-     "text-olive-50 font-thin"
-    
-  
+  const navStyle = ({ isActive }) => {
+    return (
+      isActive
+        ?
+        "text-yellow-400 font-thin"
+        :
+        "text-olive-50 font-thin"
+    )
+  }
+
+
+
 
   return (
     <>

@@ -7,12 +7,12 @@ export function Homepage() {
       </title>
       <link rel="icon" href="../../public/favicon.png" />
 
-      <div className="bg-white min-h-screen flex flex-col">
+      <div className="bg-white min-h-screen flex flex-col w-screen">
         <div className="mb-10">
           <Header />
-
-
         </div>
+
+        <img src="../../public/homepage-bg.jpg" className="w-screen h-auto object-cover" />
 
         <section className="w-screen mt-16">
           <p className="font-thin text-olive-900 flex justify-center w-screen mb-4">

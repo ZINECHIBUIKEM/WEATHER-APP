@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Rightbar } from "./Rightbar";
+import { Link } from "react-router";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,13 @@ export function Header() {
     <>
       <nav className=" fixed bg-slate-800 p-1 w-screen flex flex-row justify-between items-center shadow-sm">
 
-        <img src="../../favicon.png" className="h-16 w-16 ml-4" />
+        <div className="flex flex-row align-center justify-between">
+          <img src="../../favicon.png" className="h-16 w-16 ml-4" />
+          <span className="font-bold text-olive-50 flex flex-row items-center justify-between ml-2" >
+            ZineCast
+          </span>
+        </div>
+
 
         <div className="flex flex-row justify-between px-4 gap-8">
           {open
@@ -21,20 +28,20 @@ export function Header() {
           }
 
           {/* Menu */}
-          <ul className="hidden sm:flex flex-row justify-between px-4 gap-16">
-            <li className="text-olive-50 font-thin">
+          <nav className="hidden sm:flex flex-row justify-between px-4 gap-16">
+            <Link to="/" className="text-olive-50 font-thin">
               Home
-            </li>
-            <li className="text-olive-50 font-thin">
+            </Link>
+            <Link to="/blog" className="text-olive-50 font-thin">
               Blog
-            </li>
-            <li className="text-olive-50 font-thin">
+            </Link>
+            <Link to="/searchpage" className="text-olive-50 font-thin">
+              Search
+            </Link>
+            <Link to="/contactpage" className="text-olive-50 font-thin">
               Contact
-            </li>
-            <li className="text-olive-50 font-thin">
-              Settings
-            </li>
-          </ul>
+            </Link>
+          </nav>
         </div>
       </nav>
 

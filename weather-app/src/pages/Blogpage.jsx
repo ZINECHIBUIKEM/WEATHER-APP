@@ -1,0 +1,7 @@
+export function Blogpage () {
+  return (
+    <>
+    
+    </>
+  )
+}

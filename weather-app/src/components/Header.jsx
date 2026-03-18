@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Rightbar } from "./Rightbar";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -8,6 +8,15 @@ export function Header() {
   function openMenu() {
     setOpen(!open);
   }
+
+  const navStyle = ({ isActive }) => 
+    isActive 
+    ? 
+    "text-yellow-400 font-thin" 
+    :
+     "text-olive-50 font-thin"
+    
+  
 
   return (
     <>
@@ -29,18 +38,18 @@ export function Header() {
 
           {/* Menu */}
           <nav className="hidden sm:flex flex-row justify-between px-4 gap-16">
-            <Link to="/" className="text-olive-50 font-thin">
+            <NavLink to="/" className={navStyle}>
               Home
-            </Link>
-            <Link to="/blog" className="text-olive-50 font-thin">
+            </NavLink>
+            <NavLink to="/blog-page" className={navStyle}>
               Blog
-            </Link>
-            <Link to="/searchpage" className="text-olive-50 font-thin">
+            </NavLink>
+            <NavLink to="/search-page" className={navStyle}>
               Search
-            </Link>
-            <Link to="/contactpage" className="text-olive-50 font-thin">
+            </NavLink>
+            <NavLink to="/contact-page" className={navStyle}>
               Contact
-            </Link>
+            </NavLink>
           </nav>
         </div>
       </nav>

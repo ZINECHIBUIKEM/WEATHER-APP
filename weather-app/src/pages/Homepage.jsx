@@ -10,6 +10,8 @@ export function Homepage() {
       <div className="bg-white min-h-screen flex flex-col">
         <div className="mb-10">
           <Header />
+
+
         </div>
 
         <section className="w-screen mt-16">

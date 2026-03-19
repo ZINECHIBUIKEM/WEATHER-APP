@@ -3,7 +3,7 @@ export function Homepage() {
   return (
     <>
       <title>
-        Weather app
+        Home | Zinecast
       </title>
       <link rel="icon" href="../../public/favicon.png" />
 

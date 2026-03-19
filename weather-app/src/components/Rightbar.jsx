@@ -2,10 +2,15 @@ import { NavLink } from "react-router";
 
 export function Rightbar() {
 
+  function toggleTheme() {
+    console.log("toggled")
+  };
+
+
   const navStyle = ({ isActive }) => {
     return (
       isActive
-        ? "text-yellow-400 font-thin"
+        ? "text-yellow-400 font-thin underline"
         : "text-olive-50 font-thin"
     );
   }
@@ -14,7 +19,7 @@ export function Rightbar() {
   return (
     <>
       {/* DROP DOWN MENU */}
-      <nav className="fixed flex top-18 right-0 bg-slate-800/80 sm:hidden flex-col px-0 items-center backdrop-blur-[2px] gap-12 min-h-screen w-[45vw] pt-8">
+      <nav className="fixed flex top-18 right-0 bg-slate-800/80 md:hidden flex-col px-0 items-center backdrop-blur-[2px] gap-12 min-h-screen w-[45vw] pt-8">
         <NavLink to="/" className={navStyle}>
           Home
         </NavLink>
@@ -24,9 +29,7 @@ export function Rightbar() {
         <NavLink to="/search-page" className={navStyle}>
           Search
         </NavLink>
-        <NavLink to="/contact-page" className={navStyle}>
-          Contact
-        </NavLink>
+        <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
       </nav>
     </>
   )

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Rightbar } from "./Rightbar";
+import { Searchbar } from "./Searchbar";
 import { NavLink } from "react-router";
 
 export function Header() {
@@ -9,11 +10,15 @@ export function Header() {
     setOpen(!open);
   }
 
+  function toggleTheme() {
+    console.log("toggled")
+  };
+
   const navStyle = ({ isActive }) => {
     return (
       isActive
         ?
-        "text-yellow-400 font-thin"
+        "text-yellow-400 font-thin underline"
         :
         "text-olive-50 font-thin"
     )
@@ -26,22 +31,27 @@ export function Header() {
     <>
       <nav className=" fixed bg-slate-800 p-1 w-screen flex flex-row justify-between items-center shadow-sm">
 
-        <div className="flex flex-row align-center justify-between">
-          <img src="../../favicon.png" className="h-16 w-16 ml-4" />
-          <span className="font-bold text-olive-50 flex flex-row items-center justify-between ml-2" >
+        <div className="flex flex-row shrink-0 h-20">
+          <img src="../../favicon.png" className="ml-4" />
+          <span className=" hidden font-bold text-olive-50 ml-2 md:flex flex-row items-center justify-between" >
             ZineCast
           </span>
         </div>
 
+        <div className="flex flex-row w-full ml-5">
+          <Searchbar />
+        </div>
 
-        <div className="flex flex-row justify-between px-4 gap-8">
+
+
+
           {open
-            ? <img onClick={openMenu} src="../../close-icon.svg" className=" flex sm:hidden w-8" />
-            : <img onClick={openMenu} src="../../menu-icon.svg" className="w-8 flex sm:hidden" />
+            ? <img onClick={openMenu} src="../../close-icon.svg" className="md:hidden mr-7 w-7 h-7" />
+            : <img onClick={openMenu} src="../../menu-icon.svg" className="w-7 mr-7 md:hidden h-7" />
           }
 
           {/* Menu */}
-          <nav className="hidden sm:flex flex-row justify-between px-4 gap-16">
+          <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-8 gap-16">
             <NavLink to="/" className={navStyle}>
               Home
             </NavLink>
@@ -51,11 +61,9 @@ export function Header() {
             <NavLink to="/search-page" className={navStyle}>
               Search
             </NavLink>
-            <NavLink to="/contact-page" className={navStyle}>
-              Contact
-            </NavLink>
+            <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
           </nav>
-        </div>
+        
       </nav>
 
       {/* RIGHT BAR IMPORT */}

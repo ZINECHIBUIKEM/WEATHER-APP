@@ -29,16 +29,16 @@ export function Header() {
 
   return (
     <>
-      <nav className=" fixed bg-slate-800 p-1 w-screen flex flex-row justify-between items-center shadow-sm">
+      <nav className=" fixed bg-slate-800 p-2 w-screen flex flex-row justify-between items-center shadow-sm">
 
-        <div className="flex flex-row shrink-0 h-20">
+        <div className="flex flex-row shrink-0 h-15">
           <img src="../../favicon.png" className="ml-4" />
           <span className=" hidden font-bold text-olive-50 ml-2 md:flex flex-row items-center justify-between" >
             ZineCast
           </span>
         </div>
 
-        <div className="flex flex-row w-full ml-5">
+        <div className="flex flex-row w-full ml-5 mr-5">
           <Searchbar />
         </div>
 

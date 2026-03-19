@@ -12,7 +12,9 @@ export function Searchbar() {
 
   async function sendCityName() {
     await axios.get("").then((response) => {
-      response.data
+      return (
+        response.data
+      )
     })
   }
 

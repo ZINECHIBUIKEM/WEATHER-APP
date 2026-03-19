@@ -10,7 +10,7 @@ export function Rightbar() {
   const navStyle = ({ isActive }) => {
     return (
       isActive
-        ? "text-yellow-400 font-thin underline"
+        ? "text-yellow-400 font-thin"
         : "text-olive-50 font-thin"
     );
   }
@@ -23,12 +23,15 @@ export function Rightbar() {
         <NavLink to="/" className={navStyle}>
           Home
         </NavLink>
+        <div className="flex w-[35vw] h-[1px] opacity-40 bg-white -m-5" />
         <NavLink to="/blog-page" className={navStyle}>
           Blog
         </NavLink>
+        <div className="flex w-[35vw] h-[1px] opacity-40 bg-white -m-5" />
         <NavLink to="/search-page" className={navStyle}>
           Search
         </NavLink>
+        <div className="flex w-[35vw] h-[1px] opacity-40 bg-white -m-5" />
         <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
       </nav>
     </>

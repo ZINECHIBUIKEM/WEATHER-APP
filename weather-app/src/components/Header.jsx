@@ -30,7 +30,7 @@ export function Header() {
 
   return (
     <>
-      <nav className=" fixed bg-slate-800 p-2 w-screen flex flex-row justify-between items-center shadow-sm">
+      <nav className=" fixed bg-slate-800 p-2 w-screen flex flex-row justify-between items-center shadow-sm z-10">
 
         <div className="flex flex-row shrink-0 h-15">
           <img src="../../favicon.png" className="ml-4" />

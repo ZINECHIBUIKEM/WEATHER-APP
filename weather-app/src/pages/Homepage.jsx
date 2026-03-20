@@ -1,6 +1,10 @@
 import { Header } from "../components/Header";
+import { WeatherDisplay } from "../components/WeatherDisplay"
+
+
 export function Homepage() {
   return (
+
     <>
       <title>
         Home | Zinecast
@@ -88,23 +92,21 @@ export function Homepage() {
 
             Whether it’s a calm sunny day or a stormy afternoon, the weather is always telling a story. And by paying attention, we learn how to live better within the world around us.
 
-            If you want, I can turn this into a perfect homepage article for your weather app with headings, UI sections, and call-to-actions.
-
           </article>
 
         </section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-4 px-4 w-screen h-auto mb-4">
-          <div className="bg-indigo-200 p-4 w-full rounded hover:bg-indigo-200/70 hover:shadow-inner">
-            1
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4 px-4 w-screen h-auto mb-4">
+          <div>
+            <WeatherDisplay value="texas" />
           </div>
-          <div className="bg-indigo-200 hover:bg-indigo-200/70 p-4 w-full rounded hover:shadow-inner">
-            2
+          <div>
+            <WeatherDisplay value="toronto" />
           </div>
-          <div className="bg-indigo-200 hover:bg-indigo-200/70 p-4 w-full rounded hover:shadow-inner">
-            3
+          <div>
+            <WeatherDisplay value="lagos" />
           </div>
-          <div className="bg-indigo-200 hover:bg-indigo-200/70 p-4 w-full rounded hover:shadow-inner">
-            4
+          <div>
+            <WeatherDisplay value="owerri" />
           </div>
         </div>
       </div>

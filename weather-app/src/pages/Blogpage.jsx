@@ -1,11 +1,13 @@
 import { Header } from "../components/Header";
-export function Blogpage () {
+
+export function Blogpage() {
   return (
     <>
-    <Header />
-    <div>
-      this is the Blog page
-    </div>
+      <Header />
+
+      <div className="pt-50">
+        This is the Hot blog page
+      </div>
     </>
   )
 }

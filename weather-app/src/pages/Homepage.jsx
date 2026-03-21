@@ -1,4 +1,5 @@
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { WeatherDisplay } from "../components/WeatherDisplay"
 
 
@@ -20,7 +21,7 @@ export function Homepage() {
 
         <section className="w-screen mt-8">
           <article className="font-thin">
-            <h1 className="font-bold text-xl mb-4">The Ever-Changing Story of Weather: Nature’s Invisible Force</h1>
+            <h1 className="font-bold text-3xl mb-4">The Ever-Changing Story of Weather: Nature’s Invisible Force</h1>
 
             Weather is one of the most powerful and constant forces shaping life on Earth. It influences how we dress, where we go, what we eat, and even how we feel. From the gentle morning sunshine to the dramatic crash of thunderstorms, weather is not just a background condition—it is an active, living system that affects every human being, every day.
 
@@ -103,16 +104,27 @@ export function Homepage() {
             <WeatherDisplay value="toronto" />
           </div>
           <div>
+            <WeatherDisplay value="london" />
+          </div>
+          <div>
+            <WeatherDisplay value="accra" />
+          </div>
+          <div>
+            <WeatherDisplay value="port harcourt" />
+          </div>
+          <div>
             <WeatherDisplay value="lagos" />
+          </div>
+          <div>
+            <WeatherDisplay value="asaba" />
           </div>
           <div>
             <WeatherDisplay value="owerri" />
           </div>
         </div>
       </div>
-      <footer className=" text-white font-thin text-[12px] text-sm text-center mt-4 w-screen p-8 bg-slate-800">
-        ZINEXPRESSION © 2026. All rights reserved
-      </footer>
+
+      <Footer />
     </>
   )
 };

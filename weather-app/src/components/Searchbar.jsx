@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Navigate } from "react"
 
 
 
@@ -12,6 +13,13 @@ export function Searchbar() {
 
     setValue(newValue);
   };
+
+  function enterEventListener(event) {
+    if(event.key === "Enter") {
+      searchWeather();
+    }
+  }
+
 
   async function searchWeather () {
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=73699f033e2804828b5eb9c6d5a17da4&units=metric`
@@ -43,6 +51,8 @@ export function Searchbar() {
        shadow-inner outline-none"
         placeholder="Search by city"
         onChange={saveInputText}
+        onKeyDown=
+        {enterEventListener}
       />
       <img className="absolute h-8 right-2 shadow-[0_0_10px_rgba(0,0,0,0.2)] z-10 rounded-full p-1 " src="../search-icon-olive.svg" onClick={searchWeather} />
     </div>

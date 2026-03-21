@@ -3,7 +3,7 @@ import axios from "axios";
 
 export function WeatherDisplay({ value }) {
 
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     async function fetchWeather() {
@@ -17,6 +17,7 @@ export function WeatherDisplay({ value }) {
         country: response.data.sys.country,
         description: response.data.weather[0].description,
         main: response.data.weather[0].main,
+        DoN: response.data.weather[0].icon
       });
     };
 
@@ -25,14 +26,16 @@ export function WeatherDisplay({ value }) {
 
   if(!weather) {
     return(
-      <span className="text-4xl text-[#1D293D]">
-        Loading...
+      <span className="flex items-center justify-center animate-pulse text-xl text-[#1D293D]">
+        Weather loading...
       </span>
     )
   };
 
+  const checkDoN = weather.DoN.includes("d") ? "day" : "night";
+
   return (
-    <div className="flex flex-row justify-between items-center bg-olive-50 p-4 w-full rounded shadow-sm bg-[radial-gradient(circle,#D7DFFF_1%,transparent_30%,#FAFAFA)] hover:shadow-lg transition-all duration-300 ease-in-out">
+    <div className="flex flex-row justify-between items-center bg-olive-50 p-4 w-full rounded-2xl shadow-sm bg-[radial-gradient(circle,#e6efff_1%,transparent_30%,#FAFAFA)] hover:shadow-lg transition-all duration-300 ease-in-out">
       <div className="flex flex-col items-start">
         <span className="font-bold text-[#1D293D]">
           {weather.name}
@@ -48,7 +51,7 @@ export function WeatherDisplay({ value }) {
         </span>
       </div>
 
-      <img src={`../../public/${weather.main}.svg`} className="h-20" />
+      <img src={`../../public/${weather.main}-${checkDoN}.svg`} className="h-20" />
     </div>
   )
 };

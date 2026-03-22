@@ -50,8 +50,8 @@ export function Header() {
           <NavLink to="/" className={navStyle}>
             Home
           </NavLink>
-          <NavLink to="/saved-page" className={navStyle}>
-            Saved
+          <NavLink to="/recents-page" className={navStyle}>
+            Recents
           </NavLink>
           <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
         </nav>

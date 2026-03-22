@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { Navigate } from "react"
+import { useState } from "react";
 
 
 
@@ -12,17 +11,26 @@ export function Searchbar() {
     const newValue = event.target.value;
 
     setValue(newValue);
+
   };
 
+  const savedHistory = JSON.parse(localStorage.getItem("history")) || [];
+
+  function newHistory() {
+    savedHistory.push(value);
+
+    localStorage.setItem("history", JSON.stringify(savedHistory));
+  }
+
   function enterEventListener(event) {
-    if(event.key === "Enter") {
+    if (event.key === "Enter") {
       searchWeatherFull();
     }
   }
-// Set weather variable to store JSON ddetails
-  const [ weather, setWeather ] = useState(null);
+  // Set weather variable to store JSON ddetails
+  const [weather, setWeather] = useState(null);
 
-  async function searchWeatherFull () {
+  async function searchWeatherFull() {
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=73699f033e2804828b5eb9c6d5a17da4&units=metric`
 
     const response = await axios.get(api);
@@ -39,7 +47,10 @@ export function Searchbar() {
     };
 
     setWeather(newWeather);
+    newHistory();
   }
+
+
 
   return (
     <div className="flex relative items-center w-full">

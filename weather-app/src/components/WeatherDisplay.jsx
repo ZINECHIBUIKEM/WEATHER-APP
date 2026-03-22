@@ -24,12 +24,24 @@ export function WeatherDisplay({ value }) {
     fetchWeather();
   }, [value]);
 
-  if(!weather) {
-    return(
-      <span className="flex items-center justify-center animate-pulse text-xl text-[#1D293D]">
-        Weather loading...
-      </span>
-    )
+  if (!weather) {
+    return (
+      <div className="flex flex-row justify-between items-center bg-olive-50 p-4 w-full rounded-2xl shadow-sm bg-[radial-gradient(circle,#e6efff_1%,transparent_30%,#FAFAFA)] hover:shadow-lg transition-all duration-300 ease-in-out animate-pulse">
+        <div className="flex flex-col items-start">
+          <div className="bg-[#1d293d64] mb-2 w-18 h-5 rounded-lg" />
+
+          <div className="mb-5 bg-[#1d293d64] w-5 h-4 rounded-lg" />
+
+          <div className="text-4xl bg-[#1d293d64] w-25 h-9 mt-1 rounded-lg" />
+
+          <div className="text-sm mt-2 bg-[#1d293d64] h-4 w-10 rounded-lg -mb-1" />
+
+        </div>
+
+        <div className="bg-[#1d293d64] w-17 h-15 rounded-lg" />
+
+      </div>
+    );
   };
 
   const checkDoN = weather.DoN.includes("d") ? "day" : "night";

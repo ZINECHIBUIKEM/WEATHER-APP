@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { WeatherDisplay } from "../components/WeatherDisplay";
 
-export function Blogpage() {
+export function Savedpage() {
   return (
     <>
       <Header />

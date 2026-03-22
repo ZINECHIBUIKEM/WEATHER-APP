@@ -26,14 +26,10 @@ export function Rightbar() {
           Home
         </NavLink>
         <div className="flex w-[35vw] h-[1px] opacity-40 bg-white -m-5" />
-        <NavLink to="/blog-page" className={navStyle}>
-          Blog
+        <NavLink to="/saved-page" className={navStyle}>
+          Saved
         </NavLink>
         <div className="flex w-[35vw] h-[0.5px] opacity-40 bg-white -m-5" />
-        <NavLink to="/search-page" className={navStyle}>
-          Search
-        </NavLink>
-        <div className="flex w-[35vw] h-[1px] opacity-40 bg-white -m-5" />
         <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
       </nav>
     </>

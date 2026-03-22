@@ -46,15 +46,12 @@ export function Header() {
         <HamburgerMenu openMenu={openMenu} open={open} />
 
         {/* Menu */}
-        <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-8 gap-16">
+        <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-15 gap-20">
           <NavLink to="/" className={navStyle}>
             Home
           </NavLink>
-          <NavLink to="/blog-page" className={navStyle}>
-            Blog
-          </NavLink>
-          <NavLink to="/search-page" className={navStyle}>
-            Search
+          <NavLink to="/saved-page" className={navStyle}>
+            Saved
           </NavLink>
           <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
         </nav>

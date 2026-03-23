@@ -22,7 +22,7 @@ export function Homepage({ toggleMode, darkmode }) {
             <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
           </div>
 
-          <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]" } mt-10 font-bold`}>
+          <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]" } mt-15 mb-7 font-bold`}>
             Results
           </div>
 

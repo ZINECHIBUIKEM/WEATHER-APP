@@ -1,9 +1,8 @@
 import './App.css'
 import { Route, Routes } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Homepage } from "./pages/Homepage";
 import { Recentspage } from "./pages/Recentspage";
-import { Searchpage } from "./pages/Searchpage";
 
 
 
@@ -14,9 +13,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/recents-page" element={<Recentspage />} />
-      <Route path="/search-page" element={<Searchpage />} />
+      <Route path="/" element={<Homepage toggleMode={setDarkmode} darkmode={darkmode} />} />
+      <Route path="/recents-page" element={<Recentspage toggleMode={setDarkmode} />} />
     </Routes>
   )
 }

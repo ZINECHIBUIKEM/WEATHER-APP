@@ -1,6 +1,5 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { useState } from "react";
 import { WeatherDisplay } from "../components/WeatherDisplay";
 
 export function Recentspage() {

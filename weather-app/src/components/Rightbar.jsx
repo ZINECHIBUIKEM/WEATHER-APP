@@ -1,9 +1,9 @@
 import { NavLink } from "react-router";
 
-export function Rightbar() {
+export function Rightbar({ toggleMode, darkmode }) {
 
   function toggleTheme() {
-    console.log("toggled")
+    toggleMode(!darkmode);
   };
 
 

@@ -4,7 +4,7 @@ import { Searchbar } from "./Searchbar";
 import { HamburgerMenu } from "./Hamburgermenu";
 import { NavLink } from "react-router";
 
-export function Header() {
+export function Header({ onSearch, toggleMode, darkmode }) {
   const [open, setOpen] = useState(false);
 
   function openMenu() {
@@ -12,7 +12,7 @@ export function Header() {
   }
 
   function toggleTheme() {
-    console.log("toggled")
+    toggleMode(!darkmode);
   };
 
   const navStyle = ({ isActive }) => {
@@ -40,7 +40,7 @@ export function Header() {
         </div>
 
         <div className="flex flex-row w-full ml-5 mr-5">
-          <Searchbar />
+          <Searchbar onSearch={onSearch} />
         </div>
 
         <HamburgerMenu openMenu={openMenu} open={open} />
@@ -59,7 +59,7 @@ export function Header() {
       </nav>
 
       {/* RIGHT BAR IMPORT */}
-      {open && <Rightbar />}
+      {open && <Rightbar toggleMode={toggleMode} darkmode={darkmode} />}
     </>
 
 

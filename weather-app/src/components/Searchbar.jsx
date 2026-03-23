@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 
-export function Searchbar() {
+export function Searchbar({ onSearch }) {
   const [value, setValue] = useState("");
 
   function saveInputText(event) {
@@ -17,9 +17,13 @@ export function Searchbar() {
   const savedHistory = JSON.parse(localStorage.getItem("history")) || [];
 
   function newHistory() {
-    savedHistory.push(value);
+    const normalizedValue = value.trim().toLowerCase();
 
-    localStorage.setItem("history", JSON.stringify(savedHistory));
+    const filteredHistory = savedHistory.filter((item) => {return (item.toLowerCase() !== normalizedValue)}); 
+
+    const updatedHistory = [normalizedValue, ...filteredHistory];
+
+    localStorage.setItem("history", JSON.stringify(updatedHistory));
   }
 
   function enterEventListener(event) {
@@ -46,6 +50,7 @@ export function Searchbar() {
       icon: response.data.weather[0].icon,
     };
 
+    onSearch(value);
     setWeather(newWeather);
     newHistory();
   }

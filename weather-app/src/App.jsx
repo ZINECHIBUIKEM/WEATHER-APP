@@ -14,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Homepage toggleMode={setDarkmode} darkmode={darkmode} />} />
-      <Route path="/recents-page" element={<Recentspage toggleMode={setDarkmode} />} />
+      <Route path="/recents-page" element={<Recentspage toggleMode={setDarkmode} darkmode={darkmode} />} />
     </Routes>
   )
 }

@@ -30,7 +30,7 @@ export function Rightbar({ toggleMode, darkmode }) {
           Recents
         </NavLink>
         <div className="flex w-[35vw] h-[0.5px] opacity-40 bg-white -m-5" />
-        <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
+        <img src={`toggle-${darkmode ? "off" : "on"}-icon.svg`} className="w-8" onClick={toggleTheme} />
       </nav>
     </>
   )

@@ -47,7 +47,7 @@ export function Homepage({ toggleMode, darkmode }) {
           <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
         </div>
 
-        <video src={`../../public/${!darkmode ? "lightMode" : "darkMode"}.mp4`} />
+        <video autoPlay loop muted playsInline  src={`../../public/${!darkmode ? "lightMode" : "darkMode"}.mp4`} />
 
         <section className="w-screen mt-8">
           <article className="font-thin">

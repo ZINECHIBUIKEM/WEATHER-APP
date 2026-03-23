@@ -53,7 +53,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
           <NavLink to="/recents-page" className={navStyle}>
             Recents
           </NavLink>
-          <img src="toggle-on-icon.svg" className="w-8" onClick={toggleTheme} />
+          <img src={`toggle-${darkmode ? "on" : "off"}-icon.svg`} className="w-8" onClick={toggleTheme} />
         </nav>
 
       </nav>

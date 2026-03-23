@@ -11,8 +11,9 @@ const historyLog = JSON.parse(localStorage.getItem("history")) || false;
     return (
       <>
         <Header toggleMode={toggleMode} darkmode={darkmode} />
+        
 
-        <div className="pt-20 w-screen min-h-screen">
+        <div className={`pt-20 bg-${darkmode ? "[#1D293D]" : "olive-50" } w-screen min-h-screen`}>
           {historyLog.map((historyItem) => {
             return (
               <WeatherDisplay key={historyItem} value={historyItem} />
@@ -29,7 +30,7 @@ const historyLog = JSON.parse(localStorage.getItem("history")) || false;
       <>
         <Header toggleMode={toggleMode} darkmode={darkmode} />
 
-        <div className="pt-20 w-screen min-h-screen">
+        <div className={`text-${darkmode ? "olive-50" : "[#1D293D]"} pt-20 bg-${darkmode ? "[#1D293D]" : "olive-50" } w-screen min-h-screen`}>
           No History yet
         </div>
 

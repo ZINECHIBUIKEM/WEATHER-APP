@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Rightbar } from "./Rightbar";
 import { Searchbar } from "./Searchbar";
 import { HamburgerMenu } from "./Hamburgermenu";
+import { Link } from "react-router";
 import { NavLink } from "react-router";
 
 export function Header({ onSearch, toggleMode, darkmode }) {
@@ -19,7 +20,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
     return (
       isActive
         ?
-        "text-yellow-400 font-thin underline"
+        "text-yellow-400 font-thin"
         :
         "text-olive-50 font-thin"
     )
@@ -32,15 +33,15 @@ export function Header({ onSearch, toggleMode, darkmode }) {
     <>
       <nav className=" fixed bg-slate-800 p-2 w-screen flex flex-row justify-between items-center shadow-sm z-10">
 
-        <div className="flex flex-row shrink-0 h-15">
+        <Link to="/" className="flex flex-row shrink-0 h-15">
           <img src="../../favicon.png" className="ml-4" />
           <span className=" hidden font-bold text-olive-50 ml-2 md:flex flex-row items-center justify-between" >
             ZineCast
           </span>
-        </div>
+        </Link>
 
         <div className="flex flex-row w-full ml-5 mr-5">
-          <Searchbar onSearch={onSearch} />
+          <Searchbar onSearch={onSearch} darkmode={darkmode} />
         </div>
 
         <HamburgerMenu openMenu={openMenu} open={open} />

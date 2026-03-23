@@ -17,105 +17,101 @@ export function Homepage({ toggleMode, darkmode }) {
         </title>
         <link rel="icon" href="../../public/favicon.png" />
 
-        <div className="bg-white min-h-screen flex flex-col w-screen">
+        <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-screen`}>
           <div className="mb-10">
-            <Header onSearch={setSearch} />
+            <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
           </div>
 
-          <div className="text-2xl text-[#1D293D] mt-10 font-bold">
+          <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]" } mt-10 font-bold`}>
             Results
           </div>
 
-          <WeatherDisplay value={search} />
+          <WeatherDisplay value={search} darkmode={darkmode} />
         </div>
 
         <Footer />
       </>
     )
   } else {
+    return (
 
+      <>
+        <title>
+          Zinecast
+        </title>
+        <link rel="icon" href="../../public/favicon.png" />
+
+        <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-screen`}>
+          <div className="mb-10">
+            <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
+          </div>
+
+          <video autoPlay loop muted playsInline src={`../../public/${!darkmode ? "lightMode" : "darkMode"}.mp4`} className="lg:-mt-60" />
+
+          <section className="w-screen flex flex-col items-center justify-between mt-1 text-[#1D293D]">
+            <article className={`font-thin ${darkmode ? "text-olive-50" : "text-[#1D293D]"}`}>
+              <h1 className={`font-bold text-4xl mb-4 text-${darkmode ? "olive-50" : "[#1D293D]"}`}>A Smarter Way to Check the Weather</h1>
+
+              In today’s fast-paced world, time is everything. Whether you’re heading out for work, planning a trip, or simply deciding what to wear, knowing the weather shouldn’t take more than a few seconds. Yet, many platforms overload users with unnecessary details, slow interfaces, or cluttered designs that make a simple task feel complicated.
+
+              This is exactly the problem our platform was built to solve.
+
+              <h3 className="font-bold text-md mt-4 mb-2">A Simple Idea with Real Impact</h3>
+
+              At its core, this application is designed with one goal in mind: to help people access accurate weather forecasts instantly. No distractions, no confusion—just a clean and efficient way to get the information you need, when you need it.
+
+              Instead of navigating through multiple pages or dealing with overwhelming data, users can simply search for any city and receive real-time weather updates within seconds. The experience is fast, intuitive, and built for everyday use.
+
+              <strong>Built for Speed and Clarity</strong>,
+
+              Every design decision in this platform focuses on simplicity:
+
+              A minimal search interface that gets you started immediately
+              Instant results powered by real-time data
+              A clean visual layout that highlights what matters most
+              Search history tracking for quick access to previous locations
+
+              This ensures that users spend less time figuring out the app—and more time using it
+              <p className="mt-4" />
+              <h3 className="font-lg font-bold inline-block">Search. See. Go. — Weather, without the wait.</h3>
+            </article>
+            <div className={`h-[1px] w-[80%] mt-10 bg-${darkmode ? "olive-50" : "[#1D293D]/30"}`} />
+          </section>
+
+          <span className={`text-4xl font-bold mt-20 text-${darkmode ? "olive-50" : "[#1D293D]"}`}>
+            Current Weather Highlights
+          </span>
+          <div className="grid grid-cols-1  mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4 px-4 w-screen h-auto mb-4">
+            <div>
+              <WeatherDisplay value="texas" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="toronto" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="london" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="accra" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="china" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="tokyo" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="asaba" darkmode={darkmode} />
+            </div>
+            <div>
+              <WeatherDisplay value="owerri" darkmode={darkmode} />
+            </div>
+          </div>
+        </div>
+
+        <Footer />
+      </>
+    )
   }
-
-  return (
-
-    <>
-      <title>
-        Zinecast
-      </title>
-      <link rel="icon" href="../../public/favicon.png" />
-
-      <div className="bg-white min-h-screen flex flex-col w-screen">
-        <div className="mb-10">
-          <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
-        </div>
-
-        <video autoPlay loop muted playsInline src={`../../public/${!darkmode ? "lightMode" : "darkMode"}.mp4`} className="lg:-mt-60" />
-
-        <section className="w-screen flex flex-col items-center justify-between mt-1 text-[#1D293D]">
-          <article className="font-thin">
-            <h1 className="font-bold text-4xl mb-4 text-[#1D293D]">A Smarter Way to Check the Weather</h1>
-
-            In today’s fast-paced world, time is everything. Whether you’re heading out for work, planning a trip, or simply deciding what to wear, knowing the weather shouldn’t take more than a few seconds. Yet, many platforms overload users with unnecessary details, slow interfaces, or cluttered designs that make a simple task feel complicated.
-
-            This is exactly the problem our platform was built to solve.
-
-            <h3 className="font-bold text-md mt-4 mb-2">A Simple Idea with Real Impact</h3>
-
-            At its core, this application is designed with one goal in mind: to help people access accurate weather forecasts instantly. No distractions, no confusion—just a clean and efficient way to get the information you need, when you need it.
-
-            Instead of navigating through multiple pages or dealing with overwhelming data, users can simply search for any city and receive real-time weather updates within seconds. The experience is fast, intuitive, and built for everyday use.
-
-            <strong>Built for Speed and Clarity</strong>,
-
-            Every design decision in this platform focuses on simplicity:
-
-            A minimal search interface that gets you started immediately
-            Instant results powered by real-time data
-            A clean visual layout that highlights what matters most
-            Search history tracking for quick access to previous locations
-
-            This ensures that users spend less time figuring out the app—and more time using it
-            <p className="mt-4" />
-            <h3 className="font-lg font-bold inline-block">Search. See. Go. — Weather, without the wait.</h3>
-          </article>
-          <div className="h-[1px] w-[80%] mt-10 bg-[#1D293D]/30" />
-        </section>
-
-        <span className="text-4xl font-bold mt-20 text-[#1D293D]">
-          Current Weather Highlights
-        </span>
-        <div className="grid grid-cols-1  mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4 px-4 w-screen h-auto mb-4">
-          <div>
-            <WeatherDisplay value="texas" />
-          </div>
-          <div>
-            <WeatherDisplay value="toronto" />
-          </div>
-          <div>
-            <WeatherDisplay value="london" />
-          </div>
-          <div>
-            <WeatherDisplay value="accra" />
-          </div>
-          <div>
-            <WeatherDisplay value="china" />
-          </div>
-          <div>
-            <WeatherDisplay value="tokyo" />
-          </div>
-          <div>
-            <WeatherDisplay value="asaba" />
-          </div>
-          <div>
-            <WeatherDisplay value="owerri" />
-          </div>
-        </div>
-      </div>
-
-      <Footer />
-    </>
-  )
-
-
 
 };

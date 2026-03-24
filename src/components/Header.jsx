@@ -31,11 +31,11 @@ export function Header({ onSearch, toggleMode, darkmode }) {
 
   return (
     <>
-      <nav className="fixed bg-slate-800 p-2 w-full flex flex-row justify-between items-center shadow-sm z-10 ">
+      <nav className="fixed bg-slate-800 p-2 w-full flex flex-row items-center shadow-sm z-10 ">
 
         <Link to="/" className="flex flex-row shrink-0 h-15">
           <img src="/favicon.png" className="px-2" />
-          <span className="hidden font-bold text-olive-50 pl-2 md:flex flex-row items-center justify-between" >
+          <span className="hidden md:flex flex-row items-center font-bold text-olive-50 w-full pl-2" >
             ZineCast
           </span>
         </Link>

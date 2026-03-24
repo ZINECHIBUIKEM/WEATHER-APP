@@ -23,7 +23,7 @@ export function Homepage({ toggleMode, darkmode }) {
           </div>
 
           <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]"} mt-15 mb-7 font-bold`}>
-            Results
+            Result
           </div>
           <div className="p-5">
             <WeatherDisplay value={search} darkmode={darkmode} />

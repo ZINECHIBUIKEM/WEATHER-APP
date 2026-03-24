@@ -31,7 +31,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
 
   return (
     <>
-      <nav className=" fixed bg-slate-800 p-2 w-screen flex flex-row justify-between items-center shadow-sm z-10">
+      <nav className=" fixed bg-slate-800 p-2 w-full flex flex-row justify-between items-center shadow-sm z-10">
 
         <Link to="/" className="flex flex-row shrink-0 h-15">
           <img src="/favicon.png" className="ml-4" />
@@ -40,14 +40,14 @@ export function Header({ onSearch, toggleMode, darkmode }) {
           </span>
         </Link>
 
-        <div className="flex flex-row w-full ml-5 mr-5">
+        <div className="flex flex-row w-full ml-6 mr-6">
           <Searchbar onSearch={onSearch} darkmode={darkmode} />
         </div>
 
         <HamburgerMenu darkmode={darkmode} openMenu={openMenu} open={open} />
 
         {/* Menu */}
-        <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-15 gap-20">
+        <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-16 gap-20">
           <NavLink to="/" className={navStyle}>
             Home
           </NavLink>

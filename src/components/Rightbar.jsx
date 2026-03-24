@@ -25,12 +25,12 @@ export function Rightbar({ toggleMode, darkmode }) {
         <NavLink to="/" className={navStyle}>
           Home
         </NavLink>
-        <div className="flex w-[35vw] h-[1px] opacity-40 bg-white -m-5" />
+        <div className="flex w-[35vw] h-px opacity-40 bg-white -m-5" />
         <NavLink to="/recents-page" className={navStyle}>
           Recents
         </NavLink>
         <div className="flex w-[35vw] h-[0.5px] opacity-40 bg-white -m-5" />
-        <img src={`toggle-${darkmode ? "on" : "off"}-icon.svg`} className="w-8" onClick={toggleTheme} />
+        <img src={`/toggle-${darkmode ? "on" : "off"}-icon.svg`} className="w-8" onClick={toggleTheme} />
       </nav>
     </>
   )

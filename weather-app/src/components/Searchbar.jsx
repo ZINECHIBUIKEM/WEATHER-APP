@@ -11,7 +11,7 @@ export function Searchbar({ onSearch, darkmode }) {
     const newValue = event.target.value;
 
     setValue(newValue);
-
+    onSearch(newValue);
   };
 
   const savedHistory = JSON.parse(localStorage.getItem("history")) || [];

@@ -17,7 +17,7 @@ export function Homepage({ toggleMode, darkmode }) {
         </title>
         <link rel="icon" href="/favicon.png" />
 
-        <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-screen`}>
+        <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-full`}>
           <div className="mb-10">
             <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
           </div>

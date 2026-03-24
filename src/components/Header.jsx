@@ -34,20 +34,20 @@ export function Header({ onSearch, toggleMode, darkmode }) {
       <nav className="fixed bg-slate-800 p-2 w-full flex flex-row justify-between items-center shadow-sm z-10">
 
         <Link to="/" className="flex flex-row shrink-0 h-15">
-          <img src="/favicon.png" className="ml-4" />
-          <span className=" hidden font-bold text-olive-50 ml-2 md:flex flex-row items-center justify-between" >
+          <img src="/favicon.png" className="px-2" />
+          <span className="hidden font-bold text-olive-50 pl-2 md:flex flex-row items-center justify-between" >
             ZineCast
           </span>
         </Link>
 
-        <div className="flex flex-row w-full mx-4 min-w-0">
+        <div className="flex flex-row w-full px-4 min-w-0">
           <Searchbar onSearch={onSearch} darkmode={darkmode} />
         </div>
 
         <HamburgerMenu darkmode={darkmode} openMenu={openMenu} open={open} />
 
         {/* Menu */}
-        <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-16 gap-20">
+        <nav className="hidden md:flex flex-row justify-between items-center px-10 gap-[6vw]">
           <NavLink to="/" className={navStyle}>
             Home
           </NavLink>

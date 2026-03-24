@@ -44,7 +44,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
           <Searchbar onSearch={onSearch} darkmode={darkmode} />
         </div>
 
-        <HamburgerMenu openMenu={openMenu} open={open} />
+        <HamburgerMenu darkmode={darkmode} openMenu={openMenu} open={open} />
 
         {/* Menu */}
         <nav className="hidden md:flex flex-row justify-between items-center px-4 mr-15 gap-20">

@@ -22,11 +22,13 @@ export function Homepage({ toggleMode, darkmode }) {
             <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
           </div>
 
-          <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]" } mt-15 mb-7 font-bold`}>
+          <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]"} mt-15 mb-7 font-bold`}>
             Results
           </div>
+          <div className="p-5">
+            <WeatherDisplay value={search} darkmode={darkmode} />
+          </div>
 
-          <WeatherDisplay value={search} darkmode={darkmode} />
         </div>
 
         <Footer />
@@ -48,9 +50,9 @@ export function Homepage({ toggleMode, darkmode }) {
 
           <video autoPlay loop muted playsInline src={`../../public/${!darkmode ? "lightMode" : "darkMode"}.mp4`} className="lg:-mt-60" />
 
-          <section className="w-screen flex flex-col items-center justify-between mt-1 text-[#1D293D]">
-            <article className={`font-thin ${darkmode ? "text-olive-50" : "text-[#1D293D]"}`}>
-              <h1 className={`font-bold text-4xl mb-4 text-${darkmode ? "olive-50" : "[#1D293D]"}`}>A Smarter Way to Check the Weather</h1>
+          <section className="w-screen flex flex-col items-center justify-between mt-2 text-[#1D293D]">
+            <article className={`font-thin ${darkmode ? "text-white" : "text-[#1D293D]"}`}>
+              <h1 className={`font-bold text-4xl mb-4 text-${darkmode ? "white" : "[#1D293D]"}`}>A Smarter Way to Check the Weather</h1>
 
               In today’s fast-paced world, time is everything. Whether you’re heading out for work, planning a trip, or simply deciding what to wear, knowing the weather shouldn’t take more than a few seconds. Yet, many platforms overload users with unnecessary details, slow interfaces, or cluttered designs that make a simple task feel complicated.
 
@@ -75,10 +77,12 @@ export function Homepage({ toggleMode, darkmode }) {
               <p className="mt-4" />
               <h3 className="font-lg font-bold inline-block">Search. See. Go. — Weather, without the wait.</h3>
             </article>
-            <div className={`h-[1px] w-[80%] mt-10 bg-${darkmode ? "olive-50" : "[#1D293D]/30"}`} />
+
+            <div className={`h-[0.5px] w-[80%] mt-10 bg-${darkmode ? "olive-50" : "slate-800"} opacity-20`} />
+
           </section>
 
-          <span className={`text-4xl font-bold mt-20 text-${darkmode ? "olive-50" : "[#1D293D]"}`}>
+          <span className={`text-4xl font-bold mt-20 text-${darkmode ? "white" : "[#1D293D]"}`}>
             Current Weather Highlights
           </span>
           <div className="grid grid-cols-1  mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4 px-4 w-screen h-auto mb-4">

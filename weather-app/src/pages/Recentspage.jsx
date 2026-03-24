@@ -13,7 +13,7 @@ const historyLog = JSON.parse(localStorage.getItem("history")) || false;
         <Header toggleMode={toggleMode} darkmode={darkmode} />
         
 
-        <div className={`pt-20 bg-${darkmode ? "[#1D293D]" : "olive-50" } w-screen min-h-screen`}>
+        <div className={`flex flex-col gap-5 pt-20 bg-${darkmode ? "[#1D293D]" : "olive-50" } w-screen min-h-screen p-5`}>
           {historyLog.map((historyItem) => {
             return (
               <WeatherDisplay key={historyItem} value={historyItem} />

@@ -35,7 +35,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
 
         <Link to="/" className="flex flex-row shrink-0">
           <img src="/favicon.png" className="px-2 h-15 w-auto" />
-          <span className="hidden md:flex flex-row items-center font-bold text-olive-50 w-full pl-2" >
+          <span className="hidden md:flex flex-row items-center font-bold text-olive-50 pl-2" >
             ZineCast
           </span>
         </Link>

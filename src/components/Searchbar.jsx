@@ -76,7 +76,7 @@ export function Searchbar({ onSearch, darkmode }) {
     )
   } else {
     return (
-      <div className="flex relative items-center w-full">
+      <div className="flex relative items-center w-full min-w-0">
         <input className="px-12 py-3 w-full bg-olive-50 rounded-[50px]
        shadow-inner outline-none placeholder"
           placeholder="Search by city..."

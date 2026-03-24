@@ -15,7 +15,7 @@ export function Homepage({ toggleMode, darkmode }) {
         <title>
           Zinecast
         </title>
-        <link rel="icon" href="../../public/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
 
         <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-screen`}>
           <div className="mb-10">
@@ -41,14 +41,14 @@ export function Homepage({ toggleMode, darkmode }) {
         <title>
           Zinecast
         </title>
-        <link rel="icon" href="../../public/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
 
         <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-screen`}>
           <div className="mb-10">
             <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
           </div>
 
-          <video autoPlay loop muted playsInline src={`../../public/${!darkmode ? "lightMode" : "darkMode"}.mp4`} className="lg:-mt-60" />
+          <video autoPlay loop muted playsInline src={`/${!darkmode ? "lightMode" : "darkMode"}.mp4`} className="lg:-mt-60" />
 
           <section className="w-screen flex flex-col items-center justify-between mt-2 text-[#1D293D]">
             <article className={`font-thin ${darkmode ? "text-white" : "text-[#1D293D]"}`}>

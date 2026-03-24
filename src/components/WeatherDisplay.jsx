@@ -63,7 +63,7 @@ export function WeatherDisplay({ value }) {
         </span>
       </div>
 
-      <img src={`../../public/${weather.main}-${checkDoN}.svg`} className="h-20" />
+      <img src={`/${weather.main}-${checkDoN}.svg`} className="h-20" />
     </div>
   )
 };

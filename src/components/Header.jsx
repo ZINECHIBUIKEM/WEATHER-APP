@@ -60,7 +60,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
       </nav>
 
       {/* RIGHT BAR IMPORT */}
-      {open && <Rightbar toggleMode={toggleMode} darkmode={darkmode} />}
+      {open && <Rightbar setOpen={setOpen} toggleMode={toggleMode} darkmode={darkmode} />}
     </>
 
 

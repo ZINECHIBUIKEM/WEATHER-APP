@@ -59,9 +59,9 @@ export function Searchbar({ onSearch, darkmode }) {
   if (darkmode) {
     return (
       <div className="flex relative items-center w-full">
-        <input className="px-12 text-olive-50 py-3 w-full bg-[#1D293D] border border-olive-50 rounded-[50px]
-        outline-none"
-          placeholder="Search by city..."
+        <input className="px-10 text-olive-50 py-3 w-full bg-[#1D293D] border border-olive-50 rounded-[50px]
+        outline-none placeholder:text-sm"
+          placeholder="Search city..."
           onChange={saveInputText}
           onKeyDown=
           {enterEventListener}
@@ -78,8 +78,8 @@ export function Searchbar({ onSearch, darkmode }) {
     return (
       <div className="flex relative items-center w-full min-w-0">
         <input className="px-10 py-3 w-full bg-olive-50 rounded-[50px]
-       shadow-inner outline-none placeholder"
-          placeholder="Search by city..."
+       shadow-inner outline-none placeholder:text-sm"
+          placeholder="Search city..."
           onChange={saveInputText}
           onKeyDown=
           {enterEventListener}

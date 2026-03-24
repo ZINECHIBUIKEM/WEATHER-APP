@@ -1,6 +1,6 @@
 export function HamburgerMenu({ openMenu, open, darkmode }) {
   return (
-    <div onClick={openMenu} className="group relative flex flex-col shrink-0 md:hidden px-3 justify-between items-center h-4.5 transition-all duration-300 ease-in-out origin-center">
+    <div onClick={openMenu} className="group relative flex flex-col shrink-0 md:hidden px-7 justify-between items-center h-4.5 transition-all duration-300 ease-in-out origin-center">
       <img src="/line.png" className={`w-5 transition-all duration-300 ease-in-out origin-center ${open ? "rotate-45 translate-y-2" : ""}`} />
       <img src="/line.png" className={`w-5 transition-all duration-300 ease-in-out origin-center ${open ? "opacity-0" : ""}`} />
       <img src="/line.png" className={`w-5 transition-all duration-300 ease-in-out origin-center ${open ? "-rotate-45 -translate-y-2" : ""}`} />

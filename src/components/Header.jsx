@@ -40,7 +40,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
           </span>
         </Link>
 
-        <div className="flex flex-row w-full px-4 min-w-0">
+        <div className="flex flex-row flex-1 px-4 min-w-0">
           <Searchbar onSearch={onSearch} darkmode={darkmode} />
         </div>
 

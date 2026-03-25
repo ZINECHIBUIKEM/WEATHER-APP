@@ -20,9 +20,9 @@ export function Header({ onSearch, toggleMode, darkmode }) {
     return (
       isActive
         ?
-        "text-yellow-400 font-thin"
+        "group relative text-yellow-400 font-thin"
         :
-        "text-olive-50 font-thin"
+        "group relative text-olive-50 font-thin hover:text-yellow-400"
     )
   }
 
@@ -50,11 +50,27 @@ export function Header({ onSearch, toggleMode, darkmode }) {
         <nav className="hidden md:flex flex-row justify-between items-center px-10 gap-[6vw]">
           <NavLink to="/" className={navStyle}>
             Home
+            <span className="absolute -bottom-13 -right-4 opacity-0 px-2 py-1 rounded bg-black/80 text-white text-xs group-hover:opacity-90 transition-all duration-300 ease-in-out">
+              Homepage
+            </span>
           </NavLink>
           <NavLink to="/recents-page" className={navStyle}>
             Recents
+            <span className="absolute -bottom-13 right-0 opacity-0 px-2 py-1 rounded bg-black/80 text-white text-xs group-hover:opacity-90 transition-all duration-300 ease-in-out">
+              Recents
+            </span>
           </NavLink>
-          <img src={`/toggle-${darkmode ? "on" : "off"}-icon.svg`} className="w-8" onClick={toggleTheme} />
+          <div className="group relative">
+            <img src={`/toggle-${darkmode ? "on" : "off"}-icon.svg`} className="w-8" onClick={toggleTheme} />
+            {darkmode
+              ?
+              <span className="absolute -bottom-12 -right-10 opacity-0 px-2 py-1 whitespace-nowrap rounded bg-black/80 text-white text-xs group-hover:opacity-90 transition-all duration-300 ease-in-out">Switch to light mode
+              </span>
+              :
+              <span className="absolute -bottom-12 -right-10 opacity-0 px-2 py-1 whitespace-nowrap rounded bg-black/80 text-white text-xs group-hover:opacity-90 transition-all duration-300 ease-in-out">Switch to dark mode
+              </span>}
+          </div>
+
         </nav>
 
       </nav>

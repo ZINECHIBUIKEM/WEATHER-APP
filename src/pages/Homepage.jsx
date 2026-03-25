@@ -50,9 +50,9 @@ export function Homepage({ toggleMode, darkmode }) {
 
           <video autoPlay loop muted playsInline src={`/${!darkmode ? "lightMode" : "darkMode"}.mp4`} className="lg:-mt-60" />
 
-          <section className="w-screen flex flex-col items-center justify-between mt-2 text-[#1D293D]">
+          <section className="w-screen flex flex-col items-center justify-between mt-3 md:mt-4 text-[#1D293D]">
             <article className={`font-thin ${darkmode ? "text-white" : "text-[#1D293D]"}`}>
-              <h1 className={`font-bold text-4xl mb-4 text-${darkmode ? "white" : "[#1D293D]"}`}>A Smarter Way to Check the Weather</h1>
+              <h1 className={`font-bold text-xl mb-4 text-${darkmode ? "white" : "[#1D293D]"} md:text-4xl `}>A Smarter Way to Check the Weather</h1>
 
               In today’s fast-paced world, time is everything. Whether you’re heading out for work, planning a trip, or simply deciding what to wear, knowing the weather shouldn’t take more than a few seconds. Yet, many platforms overload users with unnecessary details, slow interfaces, or cluttered designs that make a simple task feel complicated.
 
@@ -82,7 +82,7 @@ export function Homepage({ toggleMode, darkmode }) {
 
           </section>
 
-          <span className={`text-4xl font-bold mt-20 text-${darkmode ? "white" : "[#1D293D]"}`}>
+          <span className={`text-2xl font-bold mt-20 text-${darkmode ? "white" : "[#1D293D]"} md:text-4xl`}>
             Current Weather Highlights
           </span>
           <div className="grid grid-cols-1  mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4 px-4 w-screen h-auto mb-4">

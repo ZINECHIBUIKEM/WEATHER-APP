@@ -1,4 +1,4 @@
-import { Header } from "../components/Header";
+import { HeaderSaved } from "../components/HeaderSaved";
 import { Footer } from "../components/Footer";
 import { useState } from "react";
 import { WeatherDisplay } from "../components/WeatherDisplay";
@@ -18,7 +18,7 @@ export function Savedpage({ toggleMode, darkmode }) {
   if (historyLog) {
     return (
       <>
-        <Header toggleMode={toggleMode} darkmode={darkmode} />
+        <HeaderSaved toggleMode={toggleMode} darkmode={darkmode} />
 
 
         <div className={`flex flex-col gap-5 pt-20 bg-${darkmode ? "[#1D293D]" : "olive-50"} w-screen min-h-screen p-5`}>
@@ -44,7 +44,7 @@ export function Savedpage({ toggleMode, darkmode }) {
 
     return (
       <>
-        <Header toggleMode={toggleMode} darkmode={darkmode} />
+        <HeaderSaved toggleMode={toggleMode} darkmode={darkmode} />
 
         <div className={`text-${darkmode ? "olive-50" : "[#1D293D]"} pt-20 bg-${darkmode ? "[#1D293D]" : "olive-50"} w-screen min-h-screen`}>
           No saves yet

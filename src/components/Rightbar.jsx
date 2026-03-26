@@ -30,8 +30,8 @@ export function Rightbar({ toggleMode, darkmode, setOpen }) {
           Home
         </NavLink>
         <div className="flex w-[50vw] h-px opacity-40 bg-white -m-5" />
-        <NavLink to="/recents-page" className={navStyle}>
-          Recents
+        <NavLink to="/saved-page" className={navStyle}>
+          Saved
         </NavLink>
         <div className="flex w-[50vw] h-[1px] opacity-40 bg-white -m-5" />
         <img src={`/toggle-${darkmode ? "on" : "off"}-icon.svg`} className="w-8" onClick={toggleTheme} />

@@ -1,10 +1,11 @@
 import axios from "axios";
+import { Overlay } from "./Overlay";
 import { useState } from "react";
 
 
 
 
-export function Searchbar({ onSearch, darkmode }) {
+export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
   const [value, setValue] = useState("");
 
   function saveInputText(event) {
@@ -53,6 +54,7 @@ export function Searchbar({ onSearch, darkmode }) {
     onSearch(value);
     setWeather(newWeather);
     newHistory();
+    handleSave();
   }
 
 
@@ -66,11 +68,22 @@ export function Searchbar({ onSearch, darkmode }) {
           onKeyDown=
           {enterEventListener}
         />
-        <img className="peer absolute h-8 right-2 bg-[#303947] z-10 rounded-full p-1 hover:shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all duration-300 ease-in-out " src="/search-icon-white.svg" onClick={searchWeatherFull} />
+        <img className="peer absolute h-8 right-2 bg-[#303947] z-10 rounded-full p-1 hover:shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all duration-300 ease-in-out " src="/bookmark-add-white.svg" onClick={searchWeatherFull} />
 
-        <span className="absolute -bottom-10 -right-7 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-slate-800/80 transition-all duration-300 ease-in-out">
-          click to search
-        </span>
+        {showOverlay
+          ?
+          <div>
+            <Overlay value={value} showOverlay={showOverlay} />
+          </div>
+          :
+          <span className="absolute -bottom-10 -right-7 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-black/80 transition-all duration-300 ease-in-out">
+            click to save
+          </span>
+        }
+
+
+
+
 
       </div>
     )
@@ -84,13 +97,20 @@ export function Searchbar({ onSearch, darkmode }) {
           onKeyDown=
           {enterEventListener}
         />
-        <img className="peer absolute h-8 right-2 shadow-[0_0_10px_rgba(0,0,0,0.2)] z-10 rounded-full p-1 " src="/search-icon-olive.svg" onClick={searchWeatherFull} />
+        <img className="peer absolute h-8 right-2 shadow-[0_0_10px_rgba(0,0,0,0.2)] z-10 rounded-full p-1 " src="/bookmark-add-dark.svg" onClick={searchWeatherFull} />
 
-        <span className="absolute -bottom-10 -right-7 opacity-0 px-2 py-1 rounded bg-black/80 text-white text-xs peer-hover:opacity-90 transition-all duration-300 ease-in-out">
-          click to search
-        </span>
+        {showOverlay
+          ?
+          <div>
+            <Overlay value={value} showOverlay={showOverlay} />
+          </div>
+          :
+          <span className="absolute -bottom-10 -right-7 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-slate-800/80 transition-all duration-300 ease-in-out">
+            click to save
+          </span>
+        }
       </div>
     )
   };
-
+  // Remaining handle save function
 }

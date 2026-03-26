@@ -5,7 +5,7 @@ import { HamburgerMenu } from "./Hamburgermenu";
 import { Link } from "react-router";
 import { NavLink } from "react-router";
 
-export function Header({ onSearch, toggleMode, darkmode }) {
+export function Header({ onSearch, toggleMode, darkmode, handleSave, setShowOverlay, showOverlay }) {
   const [open, setOpen] = useState(false);
 
   function openMenu() {
@@ -41,7 +41,7 @@ export function Header({ onSearch, toggleMode, darkmode }) {
         </Link>
 
         <div className="flex flex-row flex-1 px-4 min-w-0">
-          <Searchbar onSearch={onSearch} darkmode={darkmode} />
+          <Searchbar onSearch={onSearch} darkmode={darkmode} handleSave={handleSave} showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
         </div>
 
         <HamburgerMenu darkmode={darkmode} openMenu={openMenu} open={open} />
@@ -54,10 +54,10 @@ export function Header({ onSearch, toggleMode, darkmode }) {
               Homepage
             </span>
           </NavLink>
-          <NavLink to="/recents-page" className={navStyle}>
-            Recents
+          <NavLink to="/saved-page" className={navStyle}>
+            Saved
             <span className="absolute -bottom-13 right-0 opacity-0 px-2 py-1 rounded bg-black/80 text-white text-xs group-hover:opacity-90 transition-all duration-300 ease-in-out">
-              Recents
+              Saved
             </span>
           </NavLink>
           <div className="group relative">

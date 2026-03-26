@@ -7,6 +7,16 @@ import { WeatherDisplay } from "../components/WeatherDisplay"
 export function Homepage({ toggleMode, darkmode }) {
   const [search, setSearch] = useState("");
 
+  const [showOverlay, setShowOverlay] = useState(false);
+
+
+  function handleSave() {
+    setShowOverlay(true);
+
+    setTimeout(() => {
+      setShowOverlay(false);
+    }, 2000);
+  };
 
 
   if (search) {
@@ -19,7 +29,7 @@ export function Homepage({ toggleMode, darkmode }) {
 
         <div className={`bg-${darkmode ? "[#1D293D]" : "olive-50"} min-h-screen flex flex-col w-screen`}>
           <div className="mb-10">
-            <Header onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
+            <Header showOverlay={showOverlay} setShowOverlay={setShowOverlay} handleSave={handleSave} onSearch={setSearch} toggleMode={toggleMode} darkmode={darkmode} />
           </div>
 
           <div className={`text-2xl text-${darkmode ? "olive-50" : "[#1D293D]"} mt-15 mb-7 font-bold`}>

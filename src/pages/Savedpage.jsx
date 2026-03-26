@@ -1,14 +1,17 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { useState } from "react";
 import { WeatherDisplay } from "../components/WeatherDisplay";
 
 export function Savedpage({ toggleMode, darkmode }) {
 
-  const historyLog = JSON.parse(localStorage.getItem("history")) || false;
+  const log = JSON.parse(localStorage.getItem("history")) || false;
+
+  const [ historyLog, setHistoryLog ] = useState(log);
 
   function deleteHistory() {
     localStorage.clear();
-    window.location.reload();
+    setHistoryLog(false);
   };
 
 
@@ -25,9 +28,9 @@ export function Savedpage({ toggleMode, darkmode }) {
             )
           })}
           <div className="flex flex-row relative items-center justify-center">
-            <img src="/delete-black.svg" className="peer w-10" onClick={deleteHistory} />
-            <span className="absolute opacity-0 top-10 px-2 py-1 rounded bg-black/80 text-white text-xs peer-hover:opacity-100 bg-black/80 transition-all duration-300 ease-in-out">
-              Delete saved
+            <img src={`/delete-${darkmode ? "white" : "black"}.svg`} className="peer w-10" onClick={deleteHistory} />
+            <span className={`absolute opacity-0 top-12 px-2 py-1 rounded text-white ${darkmode ? "bg-slate/8" : "bg-black"} text-xs peer-hover:opacity-100 ${darkmode ? "bg-slate/8" : "bg-black"}  transition-all duration-300 ease-in-ou`}>
+              Delete all saved
             </span>
           </div>
         </div>

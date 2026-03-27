@@ -15,6 +15,11 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
     onSearch(newValue);
   };
 
+  function resetValue() {
+    setValue("");
+    onSearch(false);
+  };
+
   const savedHistory = JSON.parse(localStorage.getItem("history")) || [];
 
   function newHistory() {
@@ -65,13 +70,21 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
   if (darkmode) {
     return (
       <div className="flex relative items-center w-full">
+        <img src="/search-icon-white.svg" className="absolute left-2 rounded-full p-1" />
         <input className="px-10 text-olive-50 py-3 w-full bg-[#1D293D] border border-olive-50 rounded-[50px]
         outline-none placeholder:text-sm"
+          value={value}
           placeholder="Search city..."
           onChange={saveInputText}
           onKeyDown=
           {enterEventListener}
         />
+
+        {value !== "" ? <img src="/close-white.svg" className="absolute right-2 p-1 rounded-full" onClick={resetValue} />
+          :
+          <img src="/close-white.svg" className=" opacity-0 absolute right-2 p-1 rounded-full" />
+        }
+
         <img className="peer fixed animate-pulse h-8 right-10 bottom-10 w-15 h-15 bg-[#303947] z-10 rounded-full p-1 hover:shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all duration-300 ease-in-out " src="/bookmark-add-white.svg" onClick={searchWeatherFull} />
 
         {showOverlay
@@ -94,13 +107,22 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
   } else {
     return (
       <div className="flex relative items-center w-full min-w-0">
+        <img src="/search-icon-olive.svg" className="absolute left-2 rounded-full p-1" />
         <input className="px-10 py-3 w-full bg-olive-50 rounded-[50px]
        shadow-inner outline-none placeholder:text-sm"
+       value={value}
           placeholder="Search city..."
           onChange={saveInputText}
           onKeyDown=
           {enterEventListener}
         />
+        {value !== ""
+          ?
+          <img src="/close-black.svg" className="absolute right-2 p-1 rounded-full" onClick={resetValue} />
+          :
+          <img src="/close-black.svg" className=" opacity-0 absolute right-2 p-1 rounded-full" />
+        }
+
         <img className="peer fixed animate-pulse h-8 right-10 bottom-10 w-15 h-15 bg-white shadow-[0_0_10px_rgba(0,0,0,0.2)] z-100 rounded-full p-1 hover:animate-none " src="/bookmark-add-dark.svg" onClick={searchWeatherFull} />
 
         {showOverlay

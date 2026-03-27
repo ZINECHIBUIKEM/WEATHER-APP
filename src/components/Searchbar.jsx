@@ -32,13 +32,16 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
       searchWeatherFull();
     }
   }
-  // Set weather variable to store JSON ddetails
+  // Set weather variable to store JSON details
   const [weather, setWeather] = useState(null);
 
   async function searchWeatherFull() {
+
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=73699f033e2804828b5eb9c6d5a17da4&units=metric`
 
     const response = await axios.get(api);
+
+    // Success case. I am just learning React requests and errors to the api.
 
     const newWeather = {
       temperature: response.data.main.temp,
@@ -55,7 +58,8 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
     setWeather(newWeather);
     newHistory();
     handleSave();
-  }
+
+  };
 
 
   if (darkmode) {
@@ -68,15 +72,15 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
           onKeyDown=
           {enterEventListener}
         />
-        <img className="peer absolute h-8 right-2 bg-[#303947] z-10 rounded-full p-1 hover:shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all duration-300 ease-in-out " src="/bookmark-add-white.svg" onClick={searchWeatherFull} />
+        <img className="peer fixed animate-pulse h-8 right-10 bottom-10 w-15 h-15 bg-[#303947] z-10 rounded-full p-1 hover:shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all duration-300 ease-in-out " src="/bookmark-add-white.svg" onClick={searchWeatherFull} />
 
         {showOverlay
           ?
           <div>
-            <Overlay value={value} showOverlay={showOverlay} />
+            <Overlay value={value} showOverlay={showOverlay} darkmode={darkmode} />
           </div>
           :
-          <span className="absolute -bottom-10 -right-7 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-black/80 transition-all duration-300 ease-in-out">
+          <span className="fixed bottom-15 right-30 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-black/80 transition-all duration-300 ease-in-out">
             click to save
           </span>
         }
@@ -97,20 +101,19 @@ export function Searchbar({ onSearch, darkmode, showOverlay, handleSave }) {
           onKeyDown=
           {enterEventListener}
         />
-        <img className="peer absolute h-8 right-2 shadow-[0_0_10px_rgba(0,0,0,0.2)] z-10 rounded-full p-1 " src="/bookmark-add-dark.svg" onClick={searchWeatherFull} />
+        <img className="peer fixed animate-pulse h-8 right-10 bottom-10 w-15 h-15 bg-white shadow-[0_0_10px_rgba(0,0,0,0.2)] z-100 rounded-full p-1 hover:animate-none " src="/bookmark-add-dark.svg" onClick={searchWeatherFull} />
 
         {showOverlay
           ?
           <div>
-            <Overlay value={value} showOverlay={showOverlay} />
+            <Overlay value={value} showOverlay={showOverlay} darkmode={darkmode} />
           </div>
           :
-          <span className="absolute -bottom-10 -right-7 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-slate-800/80 transition-all duration-300 ease-in-out">
+          <span className="fixed bottom-15 right-30 opacity-0 px-2 py-1 rounded bg-slate-800 text-white text-xs peer-hover:opacity-100 bg-slate-800/80 transition-all duration-300 ease-in-out">
             click to save
           </span>
         }
       </div>
     )
   };
-  // Remaining handle save function
 }
